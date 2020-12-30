@@ -21,6 +21,10 @@ all =
       , avatar = Pages.images.author.dillon
       , bio = "Elm developer and educator. Founder of Incremental Elm Consulting."
       }
+    , { name = "Aaron Votre"
+      , avatar = Pages.images.author.aaron
+      , bio = "Elixr, Elm, SylverStudios, and more!"
+      }
     ]
 
 
