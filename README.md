@@ -6,14 +6,17 @@
   * Add a second post
   * embed arbitrary HTML
 * Try out `elm-ui`
-* Try out beta deploy
-* Timebox.
+* ✅ Try out beta deploy
+* ✅ Timebox
   * Start at 10:30am -> Review progress at noon
+  * Got it to run locally, decent understanding of how it works
+  * Need a small example project to take it to the next step of "can I use this"
 
 
 ## Tips
 * `npm start` == `elm-pages develop`
-* `npm build` == `elm-pages build` # AKA prod artifact
+* `npm run build` == `elm-pages-beta` # AKA prod artifact, this is the new part
+* `npm run serve` - host static files from ☝️ without watch
 
 
 ## Using the Beta
