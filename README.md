@@ -1,4 +1,5 @@
-# Notes to self
+# Elm Pages Trial
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/stoic-swartz-035459/deploys)
 
 ## Goals
 * Understand how it works
@@ -51,42 +52,9 @@ Started a new page `test.md` and followed the compiler
 
 
 ### Details
-* https://github.com/dillonkearns/elm-pages/blob/master/docs/7.0.0-elm-package-upgrade-guide.md
+* [Beta Changes](https://github.com/dillonkearns/elm-pages/blob/master/docs/7.0.0-elm-package-upgrade-guide.md#2---beta-build-command)
 * https://github.com/dillonkearns/elm-pages/issues/151
 * [Remove Bundling from build](https://github.com/dillonkearns/elm-pages/issues/148)
-
-
-
-# elm-pages-starter
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dillonkearns/elm-pages-starter)
-
-This is an example repo to get you up and running with `elm-pages`.
-
-The entrypoint file is `index.js`. That file imports `src/Main.elm`. The `content` folder is turned into your static pages. The rest is mostly determined by logic in the Elm code! Learn more with the resources below.
-
-## Setup Instructions
-Click "Use this template" on this Github page to fork the repo.
-
-Or git clone it:
-
-```
-git clone git@github.com:dillonkearns/elm-pages-starter.git
-```
-
-Then install and run the dev server
-
-```
-cd elm-pages-starter
-npm install
-npm start # starts a local dev server using `elm-pages develop`
-```
-
-From there you can tweak the `content` folder or change the `src/Main.elm` file.
-
-
-## Learn more about `elm-pages`
-
-- Documentation site: https://elm-pages.com
-- [Elm Package docs](https://package.elm-lang.org/packages/dillonkearns/elm-pages/latest/)
-- [`elm-pages` blog](https://elm-pages.com/blog)
+* Documentation site: https://elm-pages.com
+* [Elm Package docs](https://package.elm-lang.org/packages/dillonkearns/elm-pages/latest/)
+* [`elm-pages` blog](https://elm-pages.com/blog)

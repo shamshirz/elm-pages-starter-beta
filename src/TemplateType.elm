@@ -1,11 +1,12 @@
 module TemplateType exposing (TemplateType(..), decoder)
 
+import Cloudinary
 import Data.Author
 import Date
 import Json.Decode as Decode exposing (Decoder)
 import Metadata exposing (Article, PageMetadata)
 import Pages
-import Pages.ImagePath as ImagePath
+import Pages.ImagePath as ImagePath exposing (ImagePath)
 
 
 type TemplateType
@@ -57,6 +58,7 @@ decoder =
             )
 
 
-imageDecoder : Decoder (ImagePath.ImagePath Pages.PathKey)
+imageDecoder : Decoder (ImagePath Pages.PathKey)
 imageDecoder =
-    Decode.succeed (ImagePath.external "TODO")
+    Decode.string
+        |> Decode.map (\cloudinaryAsset -> Cloudinary.url cloudinaryAsset Nothing 800)
