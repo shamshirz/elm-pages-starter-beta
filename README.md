@@ -2,35 +2,24 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/stoic-swartz-035459/deploys)
 
 ## Goals
-* Understand how it works
-  * Change the main post
-  * Add a second post
-  * embed arbitrary HTML
-* Try out `elm-ui`
+* ✅ Understand the basics
 * ✅ Try out beta deploy
 * ✅ Timebox
-  * Start at 10:30am -> Review progress at noon
-  * Got it to run locally, decent understanding of how it works
-  * Need a small example project to take it to the next step of "can I use this"
+* ✅ Try out [Cloudinary for hosting images](https://cloudinary.com/)
+* ✅ Beta build features making sense
+* 🏅 embed arbitrary HTML
+* 🏅 Try out beta template types
+* Try out `elm-ui`
 * Is `elm-pages` a suitable replacement for jekyll?
+ * Would that be worth the effort?
 * Is `elm-pages` a suitable option for personal small projects?
+ * I think so
 
 
 ## Tips
 * `npm start` == `elm-pages develop`
 * `npm run build` == `elm-pages-beta` # AKA prod artifact, this is the new part
 * `npm run serve` - host static files from ☝️ without watch
-
-
-## Using the Beta
-
-```sh
-> elm-pages-beta
-```
-
-### Why
-Templates are a solution to make page types easier
-No bundling with webpack because we don't need it.
 
 ### How
 I cloned DKs repo and checked out his [Template Modules branch](https://github.com/dillonkearns/elm-pages-starter/tree/template-modules)
