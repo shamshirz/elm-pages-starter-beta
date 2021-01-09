@@ -5,14 +5,14 @@ import Date
 import Element exposing (Element)
 import Element.Border
 import Element.Font
-import Metadata
 import Pages
 import Pages.PagePath as PagePath exposing (PagePath)
+import TemplateMetadata
 import TemplateType exposing (TemplateType)
 
 
 type alias PostEntry =
-    ( PagePath Pages.PathKey, Metadata.Article )
+    ( PagePath Pages.PathKey, TemplateMetadata.Article )
 
 
 view :
@@ -71,7 +71,7 @@ title text =
             ]
 
 
-articleIndex : Metadata.Article -> Element msg
+articleIndex : TemplateMetadata.Article -> Element msg
 articleIndex metadata =
     Element.el
         [ Element.centerX
@@ -100,7 +100,7 @@ readMoreLink =
             ]
 
 
-postPreview : Metadata.Article -> Element msg
+postPreview : TemplateMetadata.Article -> Element msg
 postPreview post =
     Element.textColumn
         [ Element.centerX

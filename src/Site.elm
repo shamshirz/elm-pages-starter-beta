@@ -40,7 +40,7 @@ staticData siteMetadata =
 
 canonicalUrl : String
 canonicalUrl =
-    "https://elm-pages-starter.netlify.com"
+    "https://sham-elm-starter-beta.netlify.app"
 
 
 manifest : Manifest.Config Pages.PathKey

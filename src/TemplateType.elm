@@ -4,14 +4,14 @@ import Cloudinary
 import Data.Author
 import Date
 import Json.Decode as Decode exposing (Decoder)
-import Metadata exposing (Article, PageMetadata)
 import Pages
-import Pages.ImagePath as ImagePath exposing (ImagePath)
+import Pages.ImagePath exposing (ImagePath)
+import TemplateMetadata
 
 
 type TemplateType
-    = Page PageMetadata
-    | Article Metadata.Article
+    = Page TemplateMetadata.Page
+    | Article TemplateMetadata.Article
     | BlogIndex ()
 
 
@@ -29,7 +29,7 @@ decoder =
                         Decode.succeed (BlogIndex ())
 
                     "blog" ->
-                        Decode.map6 Metadata.Article
+                        Decode.map6 TemplateMetadata.Article
                             (Decode.field "title" Decode.string)
                             (Decode.field "description" Decode.string)
                             (Decode.field "published"
