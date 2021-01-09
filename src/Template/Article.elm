@@ -6,13 +6,13 @@ import Element exposing (Element)
 import Element.Font as Font
 import Head
 import Head.Seo as Seo
-import Metadata exposing (Article)
 import Pages
 import Pages.ImagePath as ImagePath exposing (ImagePath)
 import Pages.PagePath exposing (PagePath)
 import Palette
 import Shared
 import Template exposing (StaticPayload, Template)
+import TemplateMetadata exposing (Article)
 import TemplateType exposing (TemplateType)
 
 

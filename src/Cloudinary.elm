@@ -48,7 +48,7 @@ url :
 url asset format width =
     let
         base =
-            "https://res.cloudinary.com/dillonkearns/image/upload"
+            "https://res.cloudinary.com/shamshirz/image/upload/"
 
         fetch_format =
             case format of

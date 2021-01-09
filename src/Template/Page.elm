@@ -4,7 +4,7 @@ import Cloudinary
 import Head
 import Head.Seo as Seo
 import MimeType
-import Pages exposing (images)
+import Pages
 import Pages.ImagePath exposing (ImagePath)
 import Pages.PagePath exposing (PagePath)
 import Shared

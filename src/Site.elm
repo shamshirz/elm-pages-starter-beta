@@ -40,7 +40,7 @@ staticData siteMetadata =
 
 canonicalUrl : String
 canonicalUrl =
-    "https://elm-pages-starter.netlify.com"
+    "https://sham-elm-starter-beta.netlify.app"
 
 
 manifest : Manifest.Config Pages.PathKey
@@ -51,11 +51,11 @@ manifest =
     , orientation = Manifest.Portrait
     , description = "elm-pages-starter - A statically typed site generator."
     , iarcRatingId = Nothing
-    , name = "elm-pages-starter"
+    , name = "Aaron's Landing Page Title"
     , themeColor = Just Color.white
     , startUrl = pages.index
-    , shortName = Just "elm-pages-starter"
-    , sourceIcon = images.iconPng
+    , shortName = Just "Aaron's Blog"
+    , sourceIcon = images.sylverbar
     , icons =
         [ icon webp 192
         , icon webp 512
