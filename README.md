@@ -9,7 +9,7 @@
 * ✅ Beta build features making sense
 * ✅ Try out `elm-ui`
 * ✅ embed arbitrary HTML
-  * 1. A page type can be any elm that renders (or not) the markdown of the matching content page
+  * 1. ✅ A page type can be any elm that renders (or not) the markdown of the matching content page
   * 2. The markdown rendered can be extended to accept custom HTML tags
 * ✅ Try out beta template types
 * Can I embed arbitrary JS within the page (bundled unity)
@@ -17,6 +17,7 @@
 
 ### Questions
 * Is `elm-pages` a suitable replacement for jekyll?
+  * [compiler + signature > docs example PR](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
 * Would that be worth the effort?
 * ✅ Is `elm-pages` a suitable option for personal small projects?
  * > Yes
