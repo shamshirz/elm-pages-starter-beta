@@ -14,6 +14,7 @@ def fxn do
   %{alpha: 1}
   |> withBeta
   |> compute()
+  |> this_just_tests_code_block_highlighting()
 end
 ```
 
