@@ -15,6 +15,7 @@ import Pages.PagePath exposing (PagePath)
 import Palette
 import Platform.Sub
 import Shared
+import Spotify
 import Template exposing (StaticPayload, Template, TemplateWithState)
 import TemplateMetadata exposing (AllElm, BlogIndex)
 import TemplateType exposing (TemplateType)
@@ -30,7 +31,7 @@ type Msg
 
 
 type alias StaticData =
-    ()
+    String
 
 
 update : TemplateMetadata.AllElm -> Msg -> Model -> ( Model, Cmd Msg )
@@ -45,8 +46,7 @@ update meta msg model =
 
 template : TemplateWithState AllElm StaticData Model Msg
 template =
-    Template.noStaticData { head = head }
-        -- |> Template.buildNoState
+    Template.withStaticData { head = head, staticData = \_ -> Spotify.spotifyData }
         |> Template.buildWithLocalState
             { init = always ( 4, Cmd.none )
             , update = update
@@ -91,6 +91,7 @@ view model allMetadata static _ =
         , incrementButton
         , Element.text (String.fromInt model)
         , decrementButton
+        , Element.text static.static
         ]
     }
 
