@@ -7,13 +7,25 @@
 * ✅ Timebox
 * ✅ Try out [Cloudinary for hosting images](https://cloudinary.com/)
 * ✅ Beta build features making sense
-* 🏅 embed arbitrary HTML
-* 🏅 Try out beta template types
-* Try out `elm-ui`
+* ✅ Try out `elm-ui`
+* ✅ embed arbitrary HTML
+  * 1. ✅ A page type can be any elm that renders (or not) the markdown of the matching content page
+  * 2. The markdown rendered can be extended to accept custom HTML tags
+* ✅ Try out beta template types
+* Can I embed arbitrary JS within the page (bundled unity)
+* Test static requests (load Spotify data on deploy vs. real time)
+
+### Questions
 * Is `elm-pages` a suitable replacement for jekyll?
- * Would that be worth the effort?
-* Is `elm-pages` a suitable option for personal small projects?
- * I think so
+  * [compiler + signature > docs example PR](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
+* Would that be worth the effort?
+* ✅ Is `elm-pages` a suitable option for personal small projects?
+ * > Yes
+
+
+### If the project continues
+* CI - lint, elm-review, elm-test
+* Give feedback to Dillon
 
 
 ## Tips
@@ -24,7 +36,7 @@
 ### How
 I cloned DKs repo and checked out his [Template Modules branch](https://github.com/dillonkearns/elm-pages-starter/tree/template-modules)
 
-### Example
+### Getting Started Example
 Started a new page `test.md` and followed the compiler
 
 * frontmatter error on `published: "2020-12-30"` needed quotes around date
@@ -40,7 +52,7 @@ Started a new page `test.md` and followed the compiler
   * `<BOX>` example and [this article on the elm markdown rendered](https://elm-pages.com/blog/extensible-markdown-parsing-in-elm)
 
 
-### Details
+### Resources
 * [Beta Changes](https://github.com/dillonkearns/elm-pages/blob/master/docs/7.0.0-elm-package-upgrade-guide.md#2---beta-build-command)
 * https://github.com/dillonkearns/elm-pages/issues/151
 * [Remove Bundling from build](https://github.com/dillonkearns/elm-pages/issues/148)

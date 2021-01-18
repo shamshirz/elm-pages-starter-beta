@@ -10,7 +10,8 @@ import TemplateMetadata
 
 
 type TemplateType
-    = Page TemplateMetadata.Page
+    = AllElm TemplateMetadata.AllElm
+    | Page TemplateMetadata.Page
     | Article TemplateMetadata.Article
     | BlogIndex ()
 
@@ -52,6 +53,31 @@ decoder =
                                 |> Decode.map (Maybe.withDefault False)
                             )
                             |> Decode.map Article
+
+                    "all-elm" ->
+                        Decode.map6 TemplateMetadata.AllElm
+                            (Decode.field "title" Decode.string)
+                            (Decode.field "description" Decode.string)
+                            (Decode.field "published"
+                                (Decode.string
+                                    |> Decode.andThen
+                                        (\isoString ->
+                                            case Date.fromIsoString isoString of
+                                                Ok date ->
+                                                    Decode.succeed date
+
+                                                Err error ->
+                                                    Decode.fail error
+                                        )
+                                )
+                            )
+                            (Decode.field "author" Data.Author.decoder)
+                            (Decode.field "image" imageDecoder)
+                            (Decode.field "draft" Decode.bool
+                                |> Decode.maybe
+                                |> Decode.map (Maybe.withDefault False)
+                            )
+                            |> Decode.map AllElm
 
                     _ ->
                         Decode.fail ("Unexpected page type " ++ pageType)

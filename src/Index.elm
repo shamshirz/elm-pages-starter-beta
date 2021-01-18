@@ -36,6 +36,9 @@ view posts =
 
                         TemplateType.BlogIndex _ ->
                             Nothing
+
+                        TemplateType.AllElm meta ->
+                            Just ( path, meta )
                 )
             |> List.sortWith postPublishDateDescending
             |> List.map postSummary

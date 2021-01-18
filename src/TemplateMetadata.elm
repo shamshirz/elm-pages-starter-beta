@@ -1,4 +1,4 @@
-module TemplateMetadata exposing (Article, BlogIndex, Page)
+module TemplateMetadata exposing (AllElm, Article, BlogIndex, Page)
 
 import Data.Author
 import Date exposing (Date)
@@ -22,3 +22,13 @@ type alias Article =
 
 type alias Page =
     { title : String }
+
+
+type alias AllElm =
+    { title : String
+    , description : String
+    , published : Date
+    , author : Data.Author.Author
+    , image : ImagePath Pages.PathKey
+    , draft : Bool
+    }
