@@ -15,7 +15,7 @@ import Pages.PagePath exposing (PagePath)
 import Palette
 import Platform.Sub
 import Shared
-import Spotify
+import Spotify exposing (Artist)
 import Template exposing (StaticPayload, Template, TemplateWithState)
 import TemplateMetadata exposing (AllElm, BlogIndex)
 import TemplateType exposing (TemplateType)
@@ -31,7 +31,7 @@ type Msg
 
 
 type alias StaticData =
-    String
+    List Artist
 
 
 update : TemplateMetadata.AllElm -> Msg -> Model -> ( Model, Cmd Msg )
@@ -91,9 +91,14 @@ view model allMetadata static _ =
         , incrementButton
         , Element.text (String.fromInt model)
         , decrementButton
-        , Element.text static.static
+        , Element.paragraph [] (List.map (\artist -> Element.row [] [ artistView artist ]) static.static)
         ]
     }
+
+
+artistView : Artist -> Element msg
+artistView { genres, name } =
+    Element.row [ Element.spacing 10 ] [ Element.text name, Element.text (String.join ", " genres) ]
 
 
 publishedDateView : { a | published : Date } -> Element msg
