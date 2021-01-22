@@ -1,7 +1,7 @@
 ---
 type: all-elm
 author: "Aaron Votre"
-title: An all elm page
+title: A page with no markdown
 description: This page doesn't expect any markdown
 image: v1609635308/simple-ag.png
 published: "2020-12-30"
