@@ -1,26 +1,44 @@
-# Elm Pages Trial
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/stoic-swartz-035459/deploys)
+# Elm Pages Trial [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/sham-elm-starter-beta/deploys)
 
-## Goals
-* ✅ Understand the basics
-* ✅ Try out beta deploy
-* ✅ Timebox
-* ✅ Try out [Cloudinary for hosting images](https://cloudinary.com/)
-* ✅ Beta build features making sense
-* ✅ Try out `elm-ui`
-* ✅ embed arbitrary HTML
-  * 1. ✅ A page type can be any elm that renders (or not) the markdown of the matching content page
-  * 2. The markdown rendered can be extended to accept custom HTML tags
-* ✅ Try out beta template types
-* Can I embed arbitrary JS within the page (bundled unity)
-* Test static requests (load Spotify data on deploy vs. real time)
+## Demo App
+https://sham-elm-starter-beta.netlify.app/
+
+## Elm-pages Compelling Features
+Extremely helpful compiler
+
+
+* Elm type safety plus even more!
+* Missing Env variables as compiler warning
+* Build time API data as compiler warning
+* SEO as compiler warning
+
+
+## Remaining
+* Replace all of the default values with mine to full brand it
+  * Document how much time that takes and if it's easy to miss etc (in PR)
+  * Browser title (tiny)
+  * Remove extra blog posts (tiny)
+  * Create landing page (med)
+  * Update header links (med)
+  * Spotify Page
+    * ✅ Load Data
+    * Style Data (small)
+    * Write content (big)
+        * Copy content from original post?
+  * Image in Readme
+  * release on github
+
+## Learnings
+* ✅ [Cloudinary for hosting static images](https://cloudinary.com/)
+* ✅ `elm-ui` > css
+* ✅ Static requests (load API data on deploy vs. real time)
 
 ### Questions
 * Is `elm-pages` a suitable replacement for jekyll?
   * [compiler + signature > docs example PR](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
 * Would that be worth the effort?
 * ✅ Is `elm-pages` a suitable option for personal small projects?
- * > Yes
+  * > Yes
 
 
 ### If the project continues
@@ -28,12 +46,17 @@
 * Give feedback to Dillon
 
 
-## Tips
-* `npm start` == `elm-pages develop`
-* `npm run build` == `elm-pages-beta` # AKA prod artifact, this is the new part
-* `npm run serve` - host static files from ☝️ without watch
+## Dev Experience
+`npm start` == `elm-pages develop`
 
-### How
+`npm run build` == `elm-pages-beta` # AKA prod artifact, this is the new part
+
+`npm run serve` - host static files from ☝️ without watch
+
+<details>
+  <summary>Development Example for others trying out `elm-pages`</summary>
+
+  ### How
 I cloned DKs repo and checked out his [Template Modules branch](https://github.com/dillonkearns/elm-pages-starter/tree/template-modules)
 
 ### Getting Started Example
@@ -48,11 +71,12 @@ Started a new page `test.md` and followed the compiler
 * built, but my page stinks
 * Wondering how to add custom things inline
   * example - inject a bit of elm defined UI into my markdown
-  * disovered in `MarkdownRenderer.elm` you can add custom tags and then it basically gets built like react with uppercase tags
+  * discovered in `MarkdownRenderer.elm` you can add custom tags and then it basically gets built like react with uppercase tags
   * `<BOX>` example and [this article on the elm markdown rendered](https://elm-pages.com/blog/extensible-markdown-parsing-in-elm)
+</details>
 
 
-### Resources
+## Resources
 * [Beta Changes](https://github.com/dillonkearns/elm-pages/blob/master/docs/7.0.0-elm-package-upgrade-guide.md#2---beta-build-command)
 * https://github.com/dillonkearns/elm-pages/issues/151
 * [Remove Bundling from build](https://github.com/dillonkearns/elm-pages/issues/148)
