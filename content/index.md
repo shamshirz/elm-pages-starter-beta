@@ -1,33 +1,13 @@
 ---
-title: 🚧 aaronvotre.com
+title: Elm Pages Demo
 type: page
 ---
 
-With `elm-pages`, we can have different elm view code per type of page.
-Then, the markdown is rendered within the body of the page.
+This is an [`elm-pages`](https://github.com/dillonkearns/elm-pages) demo site. I was exploring the static site experience particularly in comparison to the [Jekyll](https://jekyllrb.com/docs/github-pages/) generator, which we use for [the Sylver Studios Blog](https://sylverstudios.dev/). That does the job, but the developer experience left a lot to be desired.
+
+With `elm-pages` we get the expected type safety and compiler support for the view like you may expect and the really exciting part is that a lot of the static site generation has been brought into compilation! AKA - during development, the compiler will tell you that the env is missing or that a file is named incorrectly instead of requiring you to manually try to visit the pages.
+
+During this project I also tried out [Cloudinary for hosting static images](https://cloudinary.com/) which was very easy. I also had my first real experience with [Elm-Ui](https://github.com/mdgriffith/elm-ui) and it was a pleasure!
 
 
-## How can we make custom elm UI?
-I don't think there is an easy way to embed it here, but I can easy tag it before or after the markdown
-See above 👆
-
-## How can I embed an `Element msg` within the Markdown
-The demo site looks like Dillon make a custom renderer to accept custom HTML tags, example
-
-```markdown
-this is a paragraph
-<div>html is valid markdown</div>
-<CUSTOM param="x">and now this element can call to some elm code</CUSTOM>
-```
-
-## I want to embed arbitrary html into the markdown, how?
-html is valid markdown, but I want to embed basically an entire unity app. What will happen?
-Let's find out!
-<!--
-<ul>
-  <li>A</li>
-  <li>B</li>
-</ul>
- -->
-
-Experiment did not work
+I would love an excerpt from the Spotify post here.
