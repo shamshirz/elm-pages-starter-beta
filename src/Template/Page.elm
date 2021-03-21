@@ -45,10 +45,10 @@ head :
 head { metadata } =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "elm-pages-starter"
+        , siteName = "Aaron's elm-page Blog"
         , image =
             { url = cloudinaryIcon
-            , alt = "elm-pages logo"
+            , alt = "sylver studios icon"
             , dimensions = Nothing
             , mimeType = Nothing
             }
@@ -75,4 +75,4 @@ view allMetadata static rendered =
 
 cloudinaryIcon : ImagePath pathKey
 cloudinaryIcon =
-    Cloudinary.urlRectangular "v1603234028/elm-pages/elm-pages-icon" (Just MimeType.Png) ( 300, 157 )
+    Cloudinary.urlSquare "v1609635308/simple-ag.png" (Just MimeType.Png) 150

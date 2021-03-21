@@ -4,9 +4,6 @@
 https://sham-elm-starter-beta.netlify.app/
 
 ## Elm-pages Compelling Features
-Extremely helpful compiler
-
-
 * Elm type safety plus even more!
 * Missing Env variables as compiler warning
 * Build time API data as compiler warning
@@ -16,10 +13,10 @@ Extremely helpful compiler
 ## Remaining
 * Replace all of the default values with mine to full brand it
   * Document how much time that takes and if it's easy to miss etc (in PR)
-  * Browser title (tiny)
+  * ✅ Browser title (tiny)
   * ✅ Remove extra blog posts (tiny)
   * ✅ Create landing page (med)
-  * Update header links (med)
+  * ✅ Update header links (small)
   * Spotify Page
     * ✅ Load Data
     * Style Data (med - convert from css to elm-ui)
