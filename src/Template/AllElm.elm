@@ -28,6 +28,7 @@ type alias Model =
 type Msg
     = Dec
     | Inc
+    | NoOp
 
 
 type alias StaticData =
@@ -42,6 +43,9 @@ update meta msg model =
 
         Inc ->
             ( model + 1, Cmd.none )
+
+        NoOp ->
+            ( model, Cmd.none )
 
 
 template : TemplateWithState AllElm StaticData Model Msg
@@ -70,7 +74,7 @@ view :
     -> StaticPayload AllElm StaticData
     -> Shared.RenderedBody
     -> Shared.PageView Msg
-view model allMetadata static _ =
+view model allMetadata static rendered =
     { title = static.metadata.title
     , body =
         [ Element.column [ Element.spacing 10 ]
@@ -88,12 +92,20 @@ view model allMetadata static _ =
         , publishedDateView static.metadata |> Element.el [ Font.size 16, Font.color (Element.rgba255 0 0 0 0.6) ]
         , Palette.blogHeading static.metadata.title
         , articleImageView static.metadata.image
-        , incrementButton
-        , Element.text (String.fromInt model)
-        , decrementButton
         , Element.paragraph [] (List.map (\artist -> Element.row [] [ artistView artist ]) static.static)
+        , wrapRenderedBody rendered
+
+        -- , incrementButton
+        -- , Element.text (String.fromInt model)
+        -- , decrementButton
         ]
     }
+
+
+wrapRenderedBody : Element Never -> Element Msg
+wrapRenderedBody renderedBody =
+    -- Element.row [] [ renderedBody ]
+    Element.map (always NoOp) renderedBody
 
 
 artistView : Artist -> Element msg
@@ -111,7 +123,7 @@ publishedDateView metadata =
 
 articleImageView : ImagePath Pages.PathKey -> Element msg
 articleImageView articleImage =
-    Element.image [ Element.width Element.fill ]
+    Element.image [ Element.width Element.fill, Element.padding 50 ]
         { src = ImagePath.toString articleImage
         , description = "Article cover photo"
         }

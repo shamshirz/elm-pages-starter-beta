@@ -19,7 +19,7 @@ all : List Author
 all =
     [ { name = "Aaron Votre"
       , avatar = Pages.images.author.aaron
-      , bio = "Elixr, Elm, SylverStudios, and more!"
+      , bio = "Elixir, Elm, SylverStudios, and more!"
       }
     ]
 
