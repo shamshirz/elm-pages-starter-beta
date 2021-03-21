@@ -10,4 +10,4 @@ With `elm-pages` we get the expected type safety and compiler support for the vi
 During this project I also tried out [Cloudinary for hosting static images](https://cloudinary.com/) which was very easy. I also had my first real experience with [Elm-Ui](https://github.com/mdgriffith/elm-ui) and it was a pleasure!
 
 
-I would love an excerpt from the Spotify post here.
+Please enjoy the post on using API data during compilation in the Spotify post below 👇

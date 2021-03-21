@@ -8,6 +8,7 @@ import Element.Font as Font
 import Element.Input as Input
 import Head
 import Head.Seo as Seo
+import Index
 import MimeType
 import Pages
 import Pages.ImagePath exposing (ImagePath)
@@ -66,35 +67,10 @@ view :
 view allMetadata static rendered =
     { title = static.metadata.title
     , body =
-        [ elmUiBayB
-        , rendered
+        [ rendered
+        , Element.column [ Element.padding 20, Element.centerX ] [ Index.view allMetadata ]
         ]
     }
-
-
-elmUiBayB : Element msg
-elmUiBayB =
-    Input.button
-        [ padding 10
-        , Border.width 3
-        , Border.rounded 6
-        , Border.color Palette.color.primary
-        , Background.color Palette.color.primary
-        , Font.variant Font.smallCaps
-
-        -- The order of mouseDown/mouseOver can be significant when changing
-        -- the same attribute in both
-        , mouseDown
-            [ Background.color Palette.color.primary
-            , Border.color Palette.color.primary
-            , Font.color Palette.color.primary
-            ]
-        , mouseOver
-            [ Background.color Palette.color.primary
-            , Border.color Palette.color.primary
-            ]
-        ]
-        { onPress = Nothing, label = text "styled button" }
 
 
 cloudinaryIcon : ImagePath pathKey
