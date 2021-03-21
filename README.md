@@ -20,8 +20,7 @@ https://sham-elm-starter-beta.netlify.app/
   * Spotify Page
     * ✅ Load Data
     * Style Data (med - convert from css to elm-ui)
-    * Write content (big)
-        * Copy content from original post?
+    * ✅ Write content (big)
   * Image in Readme
   * release on github
 
