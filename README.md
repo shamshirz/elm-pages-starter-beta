@@ -17,7 +17,7 @@ Extremely helpful compiler
 * Replace all of the default values with mine to full brand it
   * Document how much time that takes and if it's easy to miss etc (in PR)
   * Browser title (tiny)
-  * Remove extra blog posts (tiny)
+  * ✅ Remove extra blog posts (tiny)
   * Create landing page (med)
   * Update header links (med)
   * Spotify Page
