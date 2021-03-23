@@ -8,7 +8,6 @@ import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
 import Head
-import Index
 import Pages
 import Pages.ImagePath as ImagePath exposing (ImagePath)
 import Pages.PagePath exposing (PagePath)
@@ -16,8 +15,8 @@ import Palette
 import Platform.Sub
 import Shared
 import Spotify exposing (Artist)
-import Template exposing (StaticPayload, Template, TemplateWithState)
-import TemplateMetadata exposing (AllElm, BlogIndex)
+import Template exposing (StaticPayload, TemplateWithState)
+import TemplateMetadata exposing (AllElm)
 import TemplateType exposing (TemplateType)
 
 
@@ -94,10 +93,7 @@ view model allMetadata static rendered =
         , articleImageView static.metadata.image
         , artistsView static.static
         , wrapInNoOp rendered
-
-        -- , incrementButton
-        -- , Element.text (String.fromInt model)
-        -- , decrementButton
+        , stateSection model
         ]
     }
 
@@ -182,18 +178,27 @@ artistsView artists =
 
 publishedDateView : { a | published : Date } -> Element msg
 publishedDateView metadata =
-    Element.text
-        (metadata.published
-            |> Date.format "MMMM ddd, yyyy"
-        )
+    Element.text (Date.format "MMMM ddd, yyyy" metadata.published)
 
 
 articleImageView : ImagePath Pages.PathKey -> Element msg
 articleImageView articleImage =
     Element.image [ Element.width Element.fill, Element.paddingXY 125 0 ]
         { src = ImagePath.toString articleImage
-        , description = "Article cover photo"
+        , description = "Spotify Logo cover image"
         }
+
+
+stateSection : Int -> Element Msg
+stateSection value =
+    Element.column [ Element.centerX ]
+        [ Element.el [] (Element.text "🎉 Bonus Demo: We can even have internal state 🎉")
+        , Element.row [ Element.centerX, Element.spacing 10 ]
+            [ incrementButton
+            , Element.text (String.fromInt value)
+            , decrementButton
+            ]
+        ]
 
 
 incrementButton : Element Msg
