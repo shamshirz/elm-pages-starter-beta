@@ -19,8 +19,12 @@ https://sham-elm-starter-beta.netlify.app/
   * ✅ Update header links (small)
   * Spotify Page
     * ✅ Load Data
-    * Style Data (med - convert from css to elm-ui)
-    * ✅ Write content (big)
+    * ✅ Style Data (med - convert from css to elm-ui, took 2 hours)
+    * Write content (big)
+      * ✅ First Draft
+      * 2nd Version
+      * Get Feedback
+      * Final Edit
   * Image in Readme
   * release on github
 
