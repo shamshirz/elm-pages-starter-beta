@@ -27,6 +27,9 @@ https://sham-elm-starter-beta.netlify.app/
       * Final Edit
   * Image in Readme
   * release on github
+  * Favicon is missing
+  * Code syntax highlighting
+    * https://highlightjs.org/usage/
 
 ## Learnings
 * ✅ [Cloudinary for hosting static images](https://cloudinary.com/)
