@@ -1,7 +1,4 @@
-# Elm Pages Trial [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/sham-elm-starter-beta/deploys)
-
-## Demo App
-https://sham-elm-starter-beta.netlify.app/
+# Aaron's Elm-Pages Demo [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/sham-elm-starter-beta/deploys) (👈 click me)
 
 ## Elm-pages Compelling Features
 * Elm type safety plus even more!
@@ -28,8 +25,7 @@ https://sham-elm-starter-beta.netlify.app/
   * Image in Readme
   * release on github
   * Favicon is missing
-  * Code syntax highlighting
-    * https://highlightjs.org/usage/
+  * ✅ Code syntax highlighting (hard - 3hr)
 
 ## Learnings
 * ✅ [Cloudinary for hosting static images](https://cloudinary.com/)
