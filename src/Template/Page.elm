@@ -6,6 +6,7 @@ import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
+import Element.Region
 import Head
 import Head.Seo as Seo
 import Index
@@ -67,9 +68,18 @@ view :
 view allMetadata static rendered =
     { title = static.metadata.title
     , body =
-        [ rendered
-        , Element.column [ Element.padding 20, Element.centerX ] [ Index.view allMetadata ]
+        [ Element.column [ Element.width Element.fill ]
+            [ Element.column
+                [ Element.padding 30
+                , Element.spacing 40
+                , Element.Region.mainContent
+                , Element.width (Element.fill |> Element.maximum 800)
+                , Element.centerX
+                ]
+                (rendered ++ [ Element.column [ Element.padding 20, Element.centerX ] [ Index.view allMetadata ] ])
+            ]
         ]
+            |> List.map (Element.map never)
     }
 
 

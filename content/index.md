@@ -4,9 +4,11 @@ type: page
 ---
 
 # Why Elm-pages
+
 The main objective was to compare it to the [Jekyll](https://jekyllrb.com/docs/github-pages/) experience and define for future blog ideas what would be the default answer. In that pursuit, **[`elm-pages`](https://github.com/dillonkearns/elm-pages) would be fantastic for small and simple static websites.** It was a pleasure to use and significantly easier than getting started with Jekyll, where the only path to success involved a lot of magic and copy-paste. For larger sites, or sites needing a more complex interaction between their markdown and the rest of the code, `elm-pages` didn't seem particularly suitable. Example, [the Sylver Studios Blog](https://sylverstudios.dev/) has a lot of pages that are glorified wrappers around embedded Unity apps, and frequently embed JS between lines of markdown. There wasn't an obvious, "easy" solution for that type of behavior within `elm-pages`.
 
 ## Compiler as a Guide
+
 The most compelling element of `elm-pages` is the compiler support. The compiler clearly points out problems, describes the type mismatch, and even gives suggestions for what you may have meant. **The compiler guides elm code and static content like front matter and local assets.** Here's an example of fixing Front matter which always seemed like a debug nightmare in Jekyll.
 
 ```YAML

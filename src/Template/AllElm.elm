@@ -7,6 +7,7 @@ import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
+import Element.Region
 import Head
 import Pages
 import Pages.ImagePath as ImagePath exposing (ImagePath)
@@ -74,33 +75,52 @@ view :
     -> Shared.RenderedBody
     -> Shared.PageView Msg
 view model allMetadata static rendered =
+    let
+        renderedBody : List (Element Msg)
+        renderedBody =
+            rendered |> wrap |> List.map (Element.map (always NoOp))
+
+        counterView : List (Element Msg)
+        counterView =
+            [ stateSection model ]
+
+        headerView : List (Element Msg)
+        headerView =
+            [ Author.view [] static.metadata.author
+            , Element.column [ Element.spacing 10, Element.width Element.fill ]
+                [ Element.paragraph [ Font.bold, Font.size 24 ]
+                    [ Element.text static.metadata.author.name
+                    ]
+                , Element.paragraph [ Font.size 16 ]
+                    [ Element.text static.metadata.author.bio ]
+                ]
+            , publishedDateView static.metadata |> Element.el [ Font.size 16, Font.color (Element.rgba255 0 0 0 0.6) ]
+            , Palette.blogHeading static.metadata.title
+            , articleImageView static.metadata.image
+            ]
+                |> List.map (Element.map (always NoOp))
+    in
     { title = static.metadata.title
     , body =
         [ Element.column [ Element.spacing 10 ]
-            [ Element.row [ Element.spacing 10 ]
-                [ Author.view [] static.metadata.author
-                , Element.column [ Element.spacing 10, Element.width Element.fill ]
-                    [ Element.paragraph [ Font.bold, Font.size 24 ]
-                        [ Element.text static.metadata.author.name
-                        ]
-                    , Element.paragraph [ Font.size 16 ]
-                        [ Element.text static.metadata.author.bio ]
-                    ]
-                ]
-            ]
-        , publishedDateView static.metadata |> Element.el [ Font.size 16, Font.color (Element.rgba255 0 0 0 0.6) ]
-        , Palette.blogHeading static.metadata.title
-        , articleImageView static.metadata.image
-        , artistsView static.static
-        , wrapInNoOp rendered
-        , stateSection model
+            (headerView ++ renderedBody ++ counterView)
         ]
     }
 
 
-wrapInNoOp : Element Never -> Element Msg
-wrapInNoOp =
-    Element.map (always NoOp)
+wrap : List (Element msg) -> List (Element msg)
+wrap rendered =
+    [ Element.column [ Element.width Element.fill ]
+        [ Element.column
+            [ Element.padding 30
+            , Element.spacing 40
+            , Element.Region.mainContent
+            , Element.width (Element.fill |> Element.maximum 800)
+            , Element.centerX
+            ]
+            rendered
+        ]
+    ]
 
 
 artistsView : List Artist -> Element msg

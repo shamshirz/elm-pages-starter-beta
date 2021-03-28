@@ -65,7 +65,7 @@ template =
 
 
 type alias RenderedBody =
-    Element Never
+    List (Element Never)
 
 
 type alias PageView msg =

@@ -66,25 +66,29 @@ view :
     -> Shared.RenderedBody
     -> Shared.PageView Never
 view allMetadata static rendered =
-    { title = static.metadata.title
-    , body =
-        [ Element.column [ Element.spacing 10 ]
-            [ Element.row [ Element.spacing 10 ]
-                [ Author.view [] static.metadata.author
-                , Element.column [ Element.spacing 10, Element.width Element.fill ]
-                    [ Element.paragraph [ Font.bold, Font.size 24 ]
-                        [ Element.text static.metadata.author.name
+    let
+        headerView : List (Element Never)
+        headerView =
+            [ Element.column [ Element.spacing 10 ]
+                [ Element.row [ Element.spacing 10 ]
+                    [ Author.view [] static.metadata.author
+                    , Element.column [ Element.spacing 10, Element.width Element.fill ]
+                        [ Element.paragraph [ Font.bold, Font.size 24 ]
+                            [ Element.text static.metadata.author.name
+                            ]
+                        , Element.paragraph [ Font.size 16 ]
+                            [ Element.text static.metadata.author.bio ]
                         ]
-                    , Element.paragraph [ Font.size 16 ]
-                        [ Element.text static.metadata.author.bio ]
                     ]
                 ]
+            , publishedDateView static.metadata |> Element.el [ Font.size 16, Font.color (Element.rgba255 0 0 0 0.6) ]
+            , Palette.blogHeading static.metadata.title
+            , articleImageView static.metadata.image
             ]
-        , publishedDateView static.metadata |> Element.el [ Font.size 16, Font.color (Element.rgba255 0 0 0 0.6) ]
-        , Palette.blogHeading static.metadata.title
-        , articleImageView static.metadata.image
-        , rendered
-        ]
+                |> List.map (Element.map never)
+    in
+    { title = static.metadata.title
+    , body = headerView ++ rendered
     }
 
 
