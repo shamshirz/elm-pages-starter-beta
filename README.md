@@ -14,18 +14,18 @@
   * ✅ Remove extra blog posts (tiny)
   * ✅ Create landing page (med)
   * ✅ Update header links (small)
+  * ✅ Code syntax highlighting (hard - 3hr)
   * Spotify Page
     * ✅ Load Data
-    * ✅ Style Data (med - convert from css to elm-ui, took 2 hours)
+    * ✅ Style Data (med - elm-ui, took 2 hours)
     * Write content (big)
       * ✅ First Draft
-      * 2nd Version
+      * ✅ 2nd Version
       * Get Feedback
       * Final Edit
-  * Image in Readme
   * release on github
+  * Image in Readme
   * Favicon is missing
-  * ✅ Code syntax highlighting (hard - 3hr)
 
 ## Learnings
 * ✅ [Cloudinary for hosting static images](https://cloudinary.com/)

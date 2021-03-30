@@ -103,7 +103,7 @@ view model allMetadata static rendered =
     { title = static.metadata.title
     , body =
         [ Element.column [ Element.spacing 10 ]
-            (headerView ++ renderedBody ++ counterView)
+            (headerView ++ (artistsView static.static :: renderedBody) ++ counterView)
         ]
     }
 

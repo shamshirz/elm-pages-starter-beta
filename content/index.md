@@ -41,4 +41,4 @@ artistInformation { genre, name } =
         , Element.el [ Font.color white, Font.size 14] (Element.text genre)
         ]
 ```
-![Function Call Tree](images/artist-info-text.png)
+![Styled Artist Name and Genre](images/artist-info-text.png)
