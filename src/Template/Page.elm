@@ -6,8 +6,10 @@ import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
+import Element.Region
 import Head
 import Head.Seo as Seo
+import Index
 import MimeType
 import Pages
 import Pages.ImagePath exposing (ImagePath)
@@ -44,10 +46,10 @@ head :
 head { metadata } =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "elm-pages-starter"
+        , siteName = "Aaron's elm-page Blog"
         , image =
             { url = cloudinaryIcon
-            , alt = "elm-pages logo"
+            , alt = "sylver studios icon"
             , dimensions = Nothing
             , mimeType = Nothing
             }
@@ -66,37 +68,21 @@ view :
 view allMetadata static rendered =
     { title = static.metadata.title
     , body =
-        [ elmUiBayB
-        , rendered
+        [ Element.column [ Element.width Element.fill ]
+            [ Element.column
+                [ Element.padding 30
+                , Element.spacing 40
+                , Element.Region.mainContent
+                , Element.width (Element.fill |> Element.maximum 800)
+                , Element.centerX
+                ]
+                (rendered ++ [ Element.column [ Element.padding 20, Element.centerX ] [ Index.view allMetadata ] ])
+            ]
         ]
+            |> List.map (Element.map never)
     }
-
-
-elmUiBayB : Element msg
-elmUiBayB =
-    Input.button
-        [ padding 10
-        , Border.width 3
-        , Border.rounded 6
-        , Border.color Palette.color.primary
-        , Background.color Palette.color.primary
-        , Font.variant Font.smallCaps
-
-        -- The order of mouseDown/mouseOver can be significant when changing
-        -- the same attribute in both
-        , mouseDown
-            [ Background.color Palette.color.primary
-            , Border.color Palette.color.primary
-            , Font.color Palette.color.primary
-            ]
-        , mouseOver
-            [ Background.color Palette.color.primary
-            , Border.color Palette.color.primary
-            ]
-        ]
-        { onPress = Nothing, label = text "styled button" }
 
 
 cloudinaryIcon : ImagePath pathKey
 cloudinaryIcon =
-    Cloudinary.urlRectangular "v1603234028/elm-pages/elm-pages-icon" (Just MimeType.Png) ( 300, 157 )
+    Cloudinary.urlSquare "v1609635308/simple-ag.png" (Just MimeType.Png) 150

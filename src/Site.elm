@@ -1,7 +1,5 @@
 module Site exposing (canonicalUrl, config, tagline)
 
---import Cloudinary
-
 import Cloudinary
 import Color
 import MimeType
@@ -49,7 +47,7 @@ manifest =
     , categories = [ Pages.Manifest.Category.education ]
     , displayMode = Manifest.Standalone
     , orientation = Manifest.Portrait
-    , description = "elm-pages-starter - A statically typed site generator."
+    , description = "aaron-elm-pages-demo - A statically typed site generatored with Elm."
     , iarcRatingId = Nothing
     , name = "Aaron's Landing Page Title"
     , themeColor = Just Color.white
@@ -67,7 +65,7 @@ manifest =
 
 tagline : String
 tagline =
-    "Starter blog for elm-pages"
+    "Aaron's Blog using elm-pages"
 
 
 webp : MimeType.MimeImage
@@ -92,9 +90,4 @@ cloudinaryIcon :
     -> Int
     -> ImagePath pathKey
 cloudinaryIcon mimeType width =
-    Cloudinary.urlSquare "v1603234028/elm-pages/elm-pages-icon" (Just mimeType) width
-
-
-socialIcon : ImagePath pathKey
-socialIcon =
-    Cloudinary.urlSquare "v1603234028/elm-pages/elm-pages-icon" Nothing 250
+    Cloudinary.urlSquare "v1609635308/simple-ag.png" (Just mimeType) width

@@ -7,6 +7,7 @@ import Html exposing (Html)
 import Json.Decode
 import Markdown.Parser
 import Markdown.Renderer
+import MarkdownRenderer
 import MySitemap
 import Pages
 import Pages.PagePath exposing (PagePath)
@@ -51,21 +52,11 @@ generateFiles siteMetadata =
         ]
 
 
-markdownDocument : { extension : String, metadata : Json.Decode.Decoder TemplateType, body : String -> Result error (Element msg) }
+markdownDocument : { extension : String, metadata : Json.Decode.Decoder TemplateType, body : String -> Result String (List (Element msg)) }
 markdownDocument =
     { extension = "md"
     , metadata = TemplateType.decoder
-    , body =
-        \markdownBody ->
-            Markdown.Parser.parse markdownBody
-                |> Result.withDefault []
-                |> Markdown.Renderer.render Markdown.Renderer.defaultHtmlRenderer
-                |> Result.withDefault [ Html.text "" ]
-                |> Html.div []
-                |> Element.html
-                |> List.singleton
-                |> Element.paragraph [ Element.width Element.fill ]
-                |> Ok
+    , body = MarkdownRenderer.view
     }
 
 
