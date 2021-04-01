@@ -1,4 +1,4 @@
-# Aaron's Elm-Pages Demo [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://app.netlify.com/sites/sham-elm-starter-beta/deploys) (👈 click me)
+# Aaron's Elm-Pages Demo [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://sham-elm-starter-beta.netlify.app/) (👈 click me)
 
 ## Elm-pages Compelling Features
 * Elm type safety plus even more!
@@ -15,6 +15,8 @@
   * ✅ Create landing page (med)
   * ✅ Update header links (small)
   * ✅ Code syntax highlighting (hard - 3hr)
+  * ✅ Missing monokai styling in deployed version
+  * ✅ Favicon is missing
   * Spotify Page
     * ✅ Load Data
     * ✅ Style Data (med - elm-ui, took 2 hours)
@@ -24,8 +26,6 @@
       * Get Feedback
       * Final Edit
   * release on github
-  * Image in Readme
-  * Favicon is missing
 
 ## Learnings
 * ✅ [Cloudinary for hosting static images](https://cloudinary.com/)
@@ -38,12 +38,6 @@
 * Would that be worth the effort?
 * ✅ Is `elm-pages` a suitable option for personal small projects?
   * > Yes
-
-
-### If the project continues
-* CI - lint, elm-review, elm-test
-* Give feedback to Dillon
-
 
 ## Dev Experience
 `npm start` == `elm-pages develop`
