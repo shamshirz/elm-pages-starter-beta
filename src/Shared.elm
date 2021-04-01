@@ -204,7 +204,7 @@ header currentPath =
                 , label =
                     Element.row [ Font.size 30, Element.spacing 16 ]
                         [ DocumentSvg.view
-                        , Element.text "Aaron's elm-pages Blog"
+                        , Element.text "Aaron on elm-pages"
                         ]
                 }
             , Element.row [ Element.spacing 15 ]

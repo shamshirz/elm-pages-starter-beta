@@ -1,4 +1,4 @@
-module Site exposing (canonicalUrl, config, tagline)
+module Site exposing (canonicalUrl, cloudinaryIcon, config, tagline)
 
 import Cloudinary
 import Color
