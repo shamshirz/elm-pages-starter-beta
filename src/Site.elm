@@ -65,7 +65,7 @@ manifest =
 
 tagline : String
 tagline =
-    "Aaron's Blog using elm-pages"
+    "Such `elm-page`, wow"
 
 
 webp : MimeType.MimeImage

@@ -7,65 +7,61 @@
 * SEO as compiler warning
 
 
-## Remaining
-* Replace all of the default values with mine to full brand it
-  * Document how much time that takes and if it's easy to miss etc (in PR)
-  * ✅ Browser title (tiny)
-  * ✅ Remove extra blog posts (tiny)
-  * ✅ Create landing page (med)
-  * ✅ Update header links (small)
-  * ✅ Code syntax highlighting (hard - 3hr)
-  * ✅ Missing monokai styling in deployed version
-  * ✅ Favicon is missing
-  * Spotify Page
-    * ✅ Load Data
-    * ✅ Style Data (med - elm-ui, took 2 hours)
-    * Write content (big)
-      * ✅ First Draft
-      * ✅ 2nd Version
-      * Get Feedback
-      * Final Edit
-  * release on github
+## Goals and Results
+Replace all of the default values with mine to full brand it. Document how much time it took - All together, ~16 hours, partially including writing new posts.
 
-## Learnings
+### Learnings
 * ✅ [Cloudinary for hosting static images](https://cloudinary.com/)
 * ✅ `elm-ui` > css
-* ✅ Static requests (load API data on deploy vs. real time)
-
-### Questions
-* Is `elm-pages` a suitable replacement for jekyll?
-  * [compiler + signature > docs example PR](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
-* Would that be worth the effort?
+* ✅ Static requests (load API data on deploy vs. live)
 * ✅ Is `elm-pages` a suitable option for personal small projects?
   * > Yes
+* Is `elm-pages` a suitable replacement for jekyll?
+  * > Yes
+  * [compiler + signature > docs example PR](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
+### Tasks
+* ✅ Browser title (1hr, several revisions)
+* ✅ Remove extra blog posts (tiny)
+* ✅ Create landing page (med)
+* ✅ Update header links (small)
+* ✅ Code syntax highlighting (3hr, include elm lib for it, tried embedded JS…failed)
+* ✅ Missing monokai styling in deployed version
+* ✅ Favicon (2hr, cloudinary + understanding beta build)
+* Spotify Page
+  * ✅ Load Data (~3hr)
+  * ✅ Style Data (2hr, learned elm-ui)
+  * Write content (big)
+    * ✅ First Draft
+    * ✅ 2nd Version
+    * Get Feedback
+    * Final Edit
+* release on github
 
 ## Dev Experience
-`npm start` == `elm-pages develop`
-
-`npm run build` == `elm-pages-beta` # AKA prod artifact, this is the new part
-
-`npm run serve` - host static files from ☝️ without watch
+* `npm start`     == `elm-pages develop`
+* `npm run build` == `elm-pages-beta` # AKA prod artifact, this is the new part
+* `npm run serve` - host static files from ☝️ without watch
 
 <details>
   <summary>Development Example for others trying out `elm-pages`</summary>
 
   ### How
-I cloned DKs repo and checked out his [Template Modules branch](https://github.com/dillonkearns/elm-pages-starter/tree/template-modules)
+  I cloned DKs repo and checked out his [Template Modules branch](https://github.com/dillonkearns/elm-pages-starter/tree/template-modules)
 
-### Getting Started Example
-Started a new page `test.md` and followed the compiler
+  ### Getting Started Example
+  Started a new page `test.md` and followed the compiler
 
-* frontmatter error on `published: "2020-12-30"` needed quotes around date
-* author needed, add
-  * > Problem with the value at json.author: "Aaron Votre"
-* author image doesn't exist
-  * > , avatar = Pages.images.author.aaron (does not have aaron field)
-  * Slightly harder to find because that file is generated from the `image/X` directory
-* built, but my page stinks
-* Wondering how to add custom things inline
-  * example - inject a bit of elm defined UI into my markdown
-  * discovered in `MarkdownRenderer.elm` you can add custom tags and then it basically gets built like react with uppercase tags
-  * `<BOX>` example and [this article on the elm markdown rendered](https://elm-pages.com/blog/extensible-markdown-parsing-in-elm)
+  * frontmatter error on `published: "2020-12-30"` needed quotes around date
+  * author needed, add
+    * > Problem with the value at json.author: "Aaron Votre"
+  * author image doesn't exist
+    * > , avatar = Pages.images.author.aaron (does not have aaron field)
+    * Slightly harder to find because that file is generated from the `image/X` directory
+  * built, but my page stinks
+  * Wondering how to add custom things inline
+    * example - inject a bit of elm defined UI into my markdown
+    * discovered in `MarkdownRenderer.elm` you can add custom tags and then it basically gets built like react with uppercase tags
+    * `<BOX>` example and [this article on the elm markdown rendered](https://elm-pages.com/blog/extensible-markdown-parsing-in-elm)
 </details>
 
 
