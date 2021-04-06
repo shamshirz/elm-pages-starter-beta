@@ -42,7 +42,7 @@ view :
     -> Shared.RenderedBody
     -> Shared.PageView msg
 view allMetadata static rendered =
-    { title = "elm-pages blog"
+    { title = "Aaron on elm-pages"
     , body =
         [ Element.column [ Element.padding 20, Element.centerX ] [ Index.view allMetadata ]
         ]

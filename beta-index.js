@@ -1,1 +1,2 @@
-export default function(elmAppReady) {}
+/* This is used by the `elm-pages-beta` command */
+export default function (elmAppReady) { }

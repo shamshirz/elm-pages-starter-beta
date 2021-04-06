@@ -39,7 +39,7 @@ generate :
     -> String
 generate { siteTagline, siteUrl } siteMetadata =
     Rss.generate
-        { title = "elm-pages Blog"
+        { title = "Aaron on elm-pages"
         , description = siteTagline
         , url = "https://elm-pages.com/blog"
         , lastBuildTime = Pages.builtAt

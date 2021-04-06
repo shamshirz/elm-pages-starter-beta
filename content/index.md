@@ -1,5 +1,5 @@
 ---
-title: Elm Pages Demo
+title: Aaron on elm-pages
 type: page
 ---
 

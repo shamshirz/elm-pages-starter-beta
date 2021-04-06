@@ -8,6 +8,7 @@ import Json.Decode
 import Markdown.Parser
 import Markdown.Renderer
 import MarkdownRenderer
+import MimeType
 import MySitemap
 import Pages
 import Pages.PagePath exposing (PagePath)
@@ -26,7 +27,14 @@ main =
         , site = Site.config
         }
         |> Pages.Platform.withFileGenerator generateFiles
-        |> Pages.Platform.withGlobalHeadTags commonHeadTags
+        |> Pages.Platform.withGlobalHeadTags
+            [ Head.appleTouchIcon (Just 180) (Site.cloudinaryIcon MimeType.Png 180)
+            , Head.appleTouchIcon (Just 192) (Site.cloudinaryIcon MimeType.Png 192)
+            , Head.icon [ ( 32, 32 ) ] MimeType.Png (Site.cloudinaryIcon MimeType.Png 32)
+            , Head.icon [ ( 16, 16 ) ] MimeType.Png (Site.cloudinaryIcon MimeType.Png 16)
+            , Head.rssLink "/blog/feed.xml"
+            , Head.sitemapLink "/sitemap.xml"
+            ]
         |> Pages.Platform.toProgram
 
 

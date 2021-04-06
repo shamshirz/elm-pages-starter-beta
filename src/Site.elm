@@ -1,4 +1,4 @@
-module Site exposing (canonicalUrl, config, tagline)
+module Site exposing (canonicalUrl, cloudinaryIcon, config, tagline)
 
 import Cloudinary
 import Color
@@ -65,7 +65,7 @@ manifest =
 
 tagline : String
 tagline =
-    "Aaron's Blog using elm-pages"
+    "Such `elm-page`, wow"
 
 
 webp : MimeType.MimeImage
