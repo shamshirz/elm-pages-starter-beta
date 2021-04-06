@@ -1,6 +1,6 @@
 # Aaron's Elm-Pages Demo [![Netlify Status](https://api.netlify.com/api/v1/badges/c4522fc2-8924-417b-954e-d7c20cb4c70f/deploy-status)](https://sham-elm-starter-beta.netlify.app/) (👈 click me)
 
-## Elm-pages Compelling Features
+## `elm-pages` Compelling Features
 * Elm type safety plus even more!
 * Missing Env variables as compiler warning
 * Build time API data as compiler warning
@@ -8,34 +8,18 @@
 
 
 ## Goals and Results
-Replace all of the default values with mine to full brand it. Document how much time it took - All together, ~16 hours, partially including writing new posts.
+I had elm & Netlify experience, but not `elm-pages` or `elm-ui`.
 
-### Learnings
-* ✅ [Cloudinary for hosting static images](https://cloudinary.com/)
-* ✅ `elm-ui` > css
-* ✅ Static requests (load API data on deploy vs. live)
-* ✅ Is `elm-pages` a suitable option for personal small projects?
+* Took ~16 hours to convert the demo app to a the current content.
+* Is `elm-pages` a suitable option for personal small projects?
   * > Yes
-* Is `elm-pages` a suitable replacement for jekyll?
+* Is `elm-pages` a suitable replacement for Jekyll?
   * > Yes
-  * [compiler + signature > docs example PR](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
-### Tasks
-* ✅ Browser title (1hr, several revisions)
-* ✅ Remove extra blog posts (tiny)
-* ✅ Create landing page (med)
-* ✅ Update header links (small)
-* ✅ Code syntax highlighting (3hr, include elm lib for it, tried embedded JS…failed)
-* ✅ Missing monokai styling in deployed version
-* ✅ Favicon (2hr, cloudinary + understanding beta build)
-* Spotify Page
-  * ✅ Load Data (~3hr)
-  * ✅ Style Data (2hr, learned elm-ui)
-  * Write content (big)
-    * ✅ First Draft
-    * ✅ 2nd Version
-    * Get Feedback
-    * Final Edit
-* release on github
+  * [Learning `elm-pages` was way easier than Jekyll](https://github.com/shamshirz/elm-pages-starter-beta/pull/2)
+* [Cloudinary for hosting static images](https://cloudinary.com/)
+* `elm-ui` was a great experience
+* `StaticData` was also great (load API data on deploy vs. live)
+
 
 ## Dev Experience
 * `npm start`     == `elm-pages develop`
@@ -62,6 +46,24 @@ Replace all of the default values with mine to full brand it. Document how much 
     * example - inject a bit of elm defined UI into my markdown
     * discovered in `MarkdownRenderer.elm` you can add custom tags and then it basically gets built like react with uppercase tags
     * `<BOX>` example and [this article on the elm markdown rendered](https://elm-pages.com/blog/extensible-markdown-parsing-in-elm)
+
+  ### Steps I took
+  * ✅ Browser title (1hr, several revisions)
+  * ✅ Remove extra blog posts (tiny)
+  * ✅ Create landing page (med)
+  * ✅ Update header links (small)
+  * ✅ Code syntax highlighting (3hr, include elm lib for it, tried embedded JS…failed)
+  * ✅ Missing monokai styling in deployed version
+  * ✅ Favicon (2hr, cloudinary + understanding beta build)
+  * ✅ Spotify Page
+    * ✅ Load Data (~3hr)
+    * ✅ Style Data (2hr, learned `elm-ui`)
+    * ✅ Write content (big)
+      * ✅ First Draft
+      * ✅ 2nd Version
+      * ✅ Get Feedback
+      * ✅ Final Edit
+  * ✅ release on github
 </details>
 
 
